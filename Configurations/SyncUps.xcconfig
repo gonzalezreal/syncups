@@ -1,0 +1,3 @@
+DATADOG_RUM_APPLICATION_ID=
+DATADOG_CLIENT_TOKEN=
+#include? "SyncUps.local.xcconfig"

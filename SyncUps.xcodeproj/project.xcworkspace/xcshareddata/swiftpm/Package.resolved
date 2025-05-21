@@ -1,5 +1,5 @@
 {
-  "originHash" : "a801f27117b5afca620eccdf1704251595ee502cb541e055e09abae99a04697f",
+  "originHash" : "5fa139d313f24c8b77686bb4b0d5d8573032303bbba2ddcaf279ae2531f5daee",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DataDog/dd-sdk-ios",
       "state" : {
-        "revision" : "27ad5b051697a773f135ed1e4b0fed3a45a0e655",
-        "version" : "2.27.0"
+        "branch" : "develop",
+        "revision" : "4e28d23b616dce388fde0e2fafd641fd16fb175b"
       }
     },
     {

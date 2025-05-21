@@ -11,6 +11,8 @@
 		5BDEDA1E2DDDD408008C4DA1 /* DatadogCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5BDEDA1D2DDDD408008C4DA1 /* DatadogCore */; };
 		5BDEDA202DDDD408008C4DA1 /* DatadogRUM in Frameworks */ = {isa = PBXBuildFile; productRef = 5BDEDA1F2DDDD408008C4DA1 /* DatadogRUM */; };
 		5BDEDA222DDDD408008C4DA1 /* DatadogSessionReplay in Frameworks */ = {isa = PBXBuildFile; productRef = 5BDEDA212DDDD408008C4DA1 /* DatadogSessionReplay */; };
+		5BDEDA262DDDD987008C4DA1 /* SyncUps.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5BDEDA252DDDD987008C4DA1 /* SyncUps.xcconfig */; };
+		5BDEDA292DDDDCAD008C4DA1 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEDA282DDDDCA9008C4DA1 /* AppConfiguration.swift */; };
 		CA1C303F2C358FEB001EE466 /* CustomDump in Frameworks */ = {isa = PBXBuildFile; productRef = CA1C303E2C358FEB001EE466 /* CustomDump */; };
 		CA350C752984506E00434F8A /* SyncUpsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA350C742984506E00434F8A /* SyncUpsApp.swift */; };
 		CA350CAF298450BF00434F8A /* SyncUpDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA350CA1298450BF00434F8A /* SyncUpDetail.swift */; };
@@ -60,6 +62,9 @@
 
 /* Begin PBXFileReference section */
 		2A368892298ADD2500E8C33A /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		5BDEDA252DDDD987008C4DA1 /* SyncUps.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SyncUps.xcconfig; sourceTree = "<group>"; };
+		5BDEDA272DDDDAED008C4DA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5BDEDA282DDDDCA9008C4DA1 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		CA350C712984506E00434F8A /* SyncUps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyncUps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA350C742984506E00434F8A /* SyncUpsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpsApp.swift; sourceTree = "<group>"; };
 		CA350C812984506F00434F8A /* SyncUpsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SyncUpsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,9 +126,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BDEDA232DDDD6F6008C4DA1 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				5BDEDA252DDDD987008C4DA1 /* SyncUps.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 		CA350C682984506E00434F8A = {
 			isa = PBXGroup;
 			children = (
+				5BDEDA232DDDD6F6008C4DA1 /* Configurations */,
 				CA350C732984506E00434F8A /* SyncUps */,
 				CA350C842984506F00434F8A /* SyncUpsTests */,
 				CA350C8E2984506F00434F8A /* SyncUpsUITests */,
@@ -145,7 +159,9 @@
 		CA350C732984506E00434F8A /* SyncUps */ = {
 			isa = PBXGroup;
 			children = (
+				5BDEDA272DDDDAED008C4DA1 /* Info.plist */,
 				2A368892298ADD2500E8C33A /* App.swift */,
+				5BDEDA282DDDDCA9008C4DA1 /* AppConfiguration.swift */,
 				CA350CAB298450BF00434F8A /* Helpers.swift */,
 				CA350CAA298450BF00434F8A /* Models.swift */,
 				CA350CA2298450BF00434F8A /* RecordMeeting.swift */,
@@ -339,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDEDA262DDDD987008C4DA1 /* SyncUps.xcconfig in Resources */,
 				CA350CD2298452F300434F8A /* ding.wav in Resources */,
 				CA350CB9298450BF00434F8A /* Assets.xcassets in Resources */,
 			);
@@ -366,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA350CB7298450BF00434F8A /* Models.swift in Sources */,
+				5BDEDA292DDDDCAD008C4DA1 /* AppConfiguration.swift in Sources */,
 				CA350CB4298450BF00434F8A /* OpenSettings.swift in Sources */,
 				CA350C752984506E00434F8A /* SyncUpsApp.swift in Sources */,
 				CA350CB3298450BF00434F8A /* SpeechClient.swift in Sources */,
@@ -416,6 +434,7 @@
 /* Begin XCBuildConfiguration section */
 		CA350C932984506F00434F8A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BDEDA252DDDD987008C4DA1 /* SyncUps.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -479,6 +498,7 @@
 		};
 		CA350C942984506F00434F8A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BDEDA252DDDD987008C4DA1 /* SyncUps.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -543,6 +563,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SyncUps/Info.plist;
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "To transcribe meeting notes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -570,6 +591,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SyncUps/Info.plist;
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "To transcribe meeting notes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -724,8 +746,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/DataDog/dd-sdk-ios";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.27.0;
+				branch = develop;
+				kind = branch;
 			};
 		};
 		CA1C303D2C358FEB001EE466 /* XCRemoteSwiftPackageReference "swift-custom-dump" */ = {

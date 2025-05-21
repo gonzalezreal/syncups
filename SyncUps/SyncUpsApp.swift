@@ -1,3 +1,7 @@
+import DatadogCore
+import DatadogInternal
+import DatadogRUM
+import DatadogSessionReplay
 import Dependencies
 import IdentifiedCollections
 import Sharing
@@ -8,6 +12,7 @@ struct SyncUpsApp: App {
   static let model = AppModel()
 
   init() {
+    setUpDatadog()
     setUpForUITest()
   }
 
@@ -16,6 +21,52 @@ struct SyncUpsApp: App {
       AppView(model: Self.model)
     }
   }
+}
+
+private func setUpDatadog() {
+  guard let appConfiguration = AppConfiguration() else {
+    reportIssue("Couldn't find app configuration. Make sure it is specified in `SyncUps.local.xcconfig`.")
+    return
+  }
+  
+  var configuration = Datadog.Configuration(
+    clientToken: appConfiguration.clientToken,
+    env: "prod",
+    batchSize: .small,
+    uploadFrequency: .frequent,
+    backgroundTasksEnabled: true
+  )
+  
+  configuration._internal_mutation {
+    $0.additionalConfiguration[CrossPlatformAttributes.sdkVersion] = "2.27.0+4e28d23"
+  }
+  
+  Datadog.initialize(
+    with: .init(
+      clientToken: appConfiguration.clientToken,
+      env: "prod",
+      batchSize: .small,
+      uploadFrequency: .frequent,
+      backgroundTasksEnabled: true
+    ),
+    trackingConsent: .granted
+  )
+  
+  RUM.enable(
+    with: .init(
+      applicationID: appConfiguration.rumApplicationID,
+      swiftUIViewsPredicate: DefaultSwiftUIRUMViewsPredicate()
+    )
+  )
+  
+  SessionReplay.enable(
+    with: .init(
+      textAndInputPrivacyLevel: .maskSensitiveInputs,
+      imagePrivacyLevel: .maskNonBundledOnly,
+      touchPrivacyLevel: .show,
+      featureFlags: [.swiftui: true]
+    )
+  )
 }
 
 //// NB: During UI tests we override certain dependencies for the app and seed initial state.
