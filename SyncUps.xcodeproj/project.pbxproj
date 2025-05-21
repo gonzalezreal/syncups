@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2A368893298ADD2500E8C33A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A368892298ADD2500E8C33A /* App.swift */; };
+		5BDEDA1E2DDDD408008C4DA1 /* DatadogCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5BDEDA1D2DDDD408008C4DA1 /* DatadogCore */; };
+		5BDEDA202DDDD408008C4DA1 /* DatadogRUM in Frameworks */ = {isa = PBXBuildFile; productRef = 5BDEDA1F2DDDD408008C4DA1 /* DatadogRUM */; };
+		5BDEDA222DDDD408008C4DA1 /* DatadogSessionReplay in Frameworks */ = {isa = PBXBuildFile; productRef = 5BDEDA212DDDD408008C4DA1 /* DatadogSessionReplay */; };
 		CA1C303F2C358FEB001EE466 /* CustomDump in Frameworks */ = {isa = PBXBuildFile; productRef = CA1C303E2C358FEB001EE466 /* CustomDump */; };
 		CA350C752984506E00434F8A /* SyncUpsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA350C742984506E00434F8A /* SyncUpsApp.swift */; };
 		CA350CAF298450BF00434F8A /* SyncUpDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA350CA1298450BF00434F8A /* SyncUpDetail.swift */; };
@@ -90,9 +93,12 @@
 				CAF8AAB12CD91A95007192A6 /* Sharing in Frameworks */,
 				CAAF4DD92C3589D400774888 /* DependenciesMacros in Frameworks */,
 				CA1C303F2C358FEB001EE466 /* CustomDump in Frameworks */,
+				5BDEDA1E2DDDD408008C4DA1 /* DatadogCore in Frameworks */,
 				CA8586B82C61210E00A53451 /* SwiftUINavigation in Frameworks */,
 				CAAF4DC92C3586AD00774888 /* IssueReporting in Frameworks */,
+				5BDEDA222DDDD408008C4DA1 /* DatadogSessionReplay in Frameworks */,
 				CAAF4DCC2C3586C900774888 /* IdentifiedCollections in Frameworks */,
+				5BDEDA202DDDD408008C4DA1 /* DatadogRUM in Frameworks */,
 				CAAF4DD42C35899500774888 /* Dependencies in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +231,9 @@
 				CA8586B72C61210E00A53451 /* SwiftUINavigation */,
 				CA99A59B2CD9172000E6F7B0 /* Sharing */,
 				CAF8AAB02CD91A95007192A6 /* Sharing */,
+				5BDEDA1D2DDDD408008C4DA1 /* DatadogCore */,
+				5BDEDA1F2DDDD408008C4DA1 /* DatadogRUM */,
+				5BDEDA212DDDD408008C4DA1 /* DatadogSessionReplay */,
 			);
 			productName = SyncUps;
 			productReference = CA350C712984506E00434F8A /* SyncUps.app */;
@@ -312,6 +321,7 @@
 				CA1C303D2C358FEB001EE466 /* XCRemoteSwiftPackageReference "swift-custom-dump" */,
 				CA8586B62C61210E00A53451 /* XCRemoteSwiftPackageReference "swift-navigation" */,
 				CAF8AAAF2CD91A95007192A6 /* XCRemoteSwiftPackageReference "swift-sharing" */,
+				5BDEDA1C2DDDD408008C4DA1 /* XCRemoteSwiftPackageReference "dd-sdk-ios" */,
 			);
 			productRefGroup = CA350C722984506E00434F8A /* Products */;
 			projectDirPath = "";
@@ -710,6 +720,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5BDEDA1C2DDDD408008C4DA1 /* XCRemoteSwiftPackageReference "dd-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DataDog/dd-sdk-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.27.0;
+			};
+		};
 		CA1C303D2C358FEB001EE466 /* XCRemoteSwiftPackageReference "swift-custom-dump" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-custom-dump";
@@ -777,6 +795,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5BDEDA1D2DDDD408008C4DA1 /* DatadogCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BDEDA1C2DDDD408008C4DA1 /* XCRemoteSwiftPackageReference "dd-sdk-ios" */;
+			productName = DatadogCore;
+		};
+		5BDEDA1F2DDDD408008C4DA1 /* DatadogRUM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BDEDA1C2DDDD408008C4DA1 /* XCRemoteSwiftPackageReference "dd-sdk-ios" */;
+			productName = DatadogRUM;
+		};
+		5BDEDA212DDDD408008C4DA1 /* DatadogSessionReplay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BDEDA1C2DDDD408008C4DA1 /* XCRemoteSwiftPackageReference "dd-sdk-ios" */;
+			productName = DatadogSessionReplay;
+		};
 		CA1C303E2C358FEB001EE466 /* CustomDump */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CA1C303D2C358FEB001EE466 /* XCRemoteSwiftPackageReference "swift-custom-dump" */;
